@@ -17,7 +17,7 @@ router.get('/new', (req, res) => {
 
 // SHOW ONE
 router.get('/:id', (req, res) => {
-  User.findById(req.params.userId)
+  User.findById(req.params.id)
   .then((user) => {
     res.render('users/show', {user})
   })
@@ -28,13 +28,21 @@ router.get('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
   User.findById(req.params.id)
   .then((user) => {
-    res.render('/users/edit', { user })
+    res.render('users/edit', { user })
   })
  })
 
 // CREATE
 router.post('/', (req, res) => {
   User.create(req.body)
+  .then((user) => {
+    res.redirect(`/users/${user._id}`)
+  })
+})
+
+// UPDATE
+router.put('/:id', (req, res) => {
+  const user = User.findByIdAndUpdate(req.params.id, req.body)
   .then((user) => {
     res.redirect(`/users/${user._id}`)
   })
