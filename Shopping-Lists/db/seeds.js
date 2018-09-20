@@ -18,3 +18,12 @@ const target = new ShoppingList({ name: 'Target', items: [shirts, mascara]})
 
 const lauren = new User({ firstName: 'Lauren', lastName: 'Hemingway', shoppingList:[target]})
 const ben = new User({ firstName: 'Ben', lastName: 'McCombs', shoppingList:[groceries]})
+
+User.deleteMany()
+  .then(() => {
+    return User.insertMany([lauren, ben])
+  })
+  .then(() => {
+    console.log('Done Seeding!')
+    mongoose.connection.close()
+  })
