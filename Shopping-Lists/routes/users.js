@@ -5,10 +5,15 @@ const { User } = require('../db/schema')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   User.find()
-  .then((User) => {
-    res.render('users/index.hbs', { User });
+  .then((users) => {
+    res.render('users/index.hbs', { users });
   })
 });
+
+// NEW, RENDER NEW FORM
+router.get('/new', (req, res) => {
+  res.render('users/new.hbs')
+})
 
 // SHOW ONE
 router.get('/:id', (req, res) => {
@@ -21,10 +26,7 @@ router.get('/:id', (req, res) => {
   
 })
 
-// NEW, RENDER NEW FORM
-router.get('/new', (req, res) => {
-  res.render('users/new.hbs')
-})
+
 
 
 
