@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 // NEW, RENDER NEW FORM
 router.get('/new', (req, res) => {
-  res.render('users/new.hbs')
+  res.render('users/new')
 })
 
 // SHOW ONE
