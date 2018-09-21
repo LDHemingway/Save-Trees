@@ -1,13 +1,15 @@
 <h1>Haaaay {{user.firstName}}</h1>
 
+<h2>Your Lists <a href="/users/{{user._id}}/lists/new">+</a></h2>
 {{#each user.shoppingLists}}
-<h3>List: {{this.name}}</h3>
+<h3>{{this.name}}</h3>
 
 <ul>
     {{#each this.items}}
-        <li>{{this.name}}, quantity: {{this.quantity}}</li>
+        <li>{{this.name}} - quantity: {{this.quantity}}</li>
     {{/each}}
 </ul>
+<a href="/users/{{user._id}}/lists/{{shoppingLists.id}}">Select This List</a> |
 {{/each}}
 
 <a href="/users/{{user._id}}/edit">Edit User</a>
@@ -15,3 +17,5 @@
 <form action='/users/{{user._id}}?_method=DELETE' method='POST'>
     <input type="submit" value='Delete User'>
 </form>
+
+<a href="/">Home</a>

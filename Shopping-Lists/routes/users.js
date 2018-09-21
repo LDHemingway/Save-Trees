@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const { User } = require('../db/schema')
+const { ShoppingLists } = require('../db/schema')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -20,7 +21,8 @@ router.get('/:id', (req, res) => {
   User.findById(req.params.id)
   .then((user) => {
     res.render('users/show', {
-      user
+      user,
+      ShoppingLists
       
     })
   })
