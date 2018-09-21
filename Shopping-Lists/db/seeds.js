@@ -16,8 +16,8 @@ const mascara = new Item ({ name: 'mascara', quantity: '1'})
 const groceries = new ShoppingList({ name: 'Groceries', items: [avocado, milk, cereal, chips]})
 const target = new ShoppingList({ name: 'Target', items: [shirts, mascara]})
 
-const lauren = new User({ firstName: 'Lauren', lastName: 'Hemingway', shoppingList:[target]})
-const ben = new User({ firstName: 'Ben', lastName: 'McCombs', shoppingList:[groceries]})
+const lauren = new User({ firstName: 'Lauren', lastName: 'Hemingway', shoppingLists:[target]})
+const ben = new User({ firstName: 'Ben', lastName: 'McCombs', shoppingLists:[groceries]})
 
 User.deleteMany()
   .then(() => {

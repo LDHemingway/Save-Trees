@@ -1,5 +1,12 @@
 <h1>Haaaay {{user.firstName}}</h1>
 
+{{#each user.shoppingLists}}
+<h3>list: {{this.name}}</h3>
+<ul>
+    <li>{{this.items.name}}</li>
+</ul>
+{{/each}}
+
 <a href="/users/{{user._id}}/edit">Edit User</a>
 
 <form action='/users/{{user._id}}?_method=DELETE' method='POST'>
