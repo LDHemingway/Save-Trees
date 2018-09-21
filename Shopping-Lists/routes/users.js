@@ -19,7 +19,6 @@ router.get('/new', (req, res) => {
 router.get('/:id', (req, res) => {
   User.findById(req.params.id)
   .then((user) => {
-    console.log(user.shoppingLists)
     res.render('users/show', {
       user
       

@@ -1,9 +1,12 @@
 <h1>Haaaay {{user.firstName}}</h1>
 
 {{#each user.shoppingLists}}
-<h3>list: {{this.name}}</h3>
+<h3>List: {{this.name}}</h3>
+
 <ul>
-    <li>{{this.items.name}}</li>
+    {{#each this.items}}
+        <li>{{this.name}}, quantity: {{this.quantity}}</li>
+    {{/each}}
 </ul>
 {{/each}}
 
