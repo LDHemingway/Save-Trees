@@ -1,7 +1,10 @@
 <h1>Create New List</h1>
 
-<form action='/users/{{user._id}}' method='POST'>
-    <div>First Name: <input type='text' name='firstName'></div>
-    <div>Last Name: <input type='text' name='lastName'></div>
-    <div><input type='submit' value='Create New User'></div>
+<form action='/users/{{user._id}}/lists' method='POST'>
+    <div>Name: <input type='text' name='name'></div><br><br>
+    <div>Item: <input type='text' name='items'></div>  <div>Quantity: <input type='text' name='quantity'></div><br><br>
+    <div>Item: <input type='text' name='items'></div>  <div>Quantity: <input type='text' name='quantity'></div><br><br>
+    <div>Item: <input type='text' name='items'></div>  <div>Quantity: <input type='text' name='quantity'></div><br><br>
+    <div>Item: <input type='text' name='items'></div>  <div>Quantity: <input type='text' name='quantity'></div><br><br>
+    <div><input type='submit' value='Create New List'></div>
 </form>
