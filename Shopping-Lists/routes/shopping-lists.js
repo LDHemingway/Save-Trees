@@ -34,9 +34,13 @@ router.get('/:id', function (req, res, next) {
 
 // CREATE LIST
 router.post('/', (req, res) => {
-  ShoppingList.create(req.body)
-  .then((shoppingList) => {
-    return shoppingList.save()
+  const newList = new ShoppingList(req.body)
+  User.findById(req.params.userId)
+  .then((user) => {
+    user.shoppingLists.push(newList)
+    return user.save()
+  })
+  .then(() => {
     res.redirect(`/users/${req.params.userId}`)
   })
 })
