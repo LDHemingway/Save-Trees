@@ -8,7 +8,8 @@ List: {{shoppingList.name}}
 add item to list
 Delete List 
 <a href='/users/{{user._id}}'>Go Back to Lists</a>
+<a href='/users/{{user._id}}/lists/{{shoppingList._id}}/new'>Add Item to List</a>
 
-<form action='/users/{{userId}}/lists/{{shoppingList._id}}?_method=DELETE' method='POST'>
+<form action='/users/{{user._id}}/lists/{{shoppingList._id}}?_method=DELETE' method='POST'>
     <input type="submit" value='Delete List'>
 </form>

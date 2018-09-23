@@ -7,6 +7,7 @@ var logger = require('morgan');
 var landingRouter = require('./routes/landing');
 var usersRouter = require('./routes/users');
 var shoppingListsRouter = require('./routes/shopping-lists')
+var itemsRouter = require('./routes/items')
 var methodOverride = require('method-override')
 const mongoose = require('mongoose')
 var app = express();
@@ -26,6 +27,7 @@ app.use(methodOverride('_method'))
 app.use('/', landingRouter);
 app.use('/users', usersRouter);
 app.use('/users/:userId/lists', shoppingListsRouter)
+app.use('/users/:uderID/lists/:id', itemsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
