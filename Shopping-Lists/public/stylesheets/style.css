@@ -1,9 +1,13 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('https://picjumbo.com/wp-content/uploads/leaf-leaves-background-free-photo-DSC04946-2210x1473.jpg')
 }
 
 a {
   color: #00B7FF;
 }
 
+.landingNav {
+  background-color: white;
+}
