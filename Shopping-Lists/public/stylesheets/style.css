@@ -10,4 +10,51 @@ a {
 
 .landingNav {
   background-color: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  border-radius: 25px;
+  border: rgb(57, 63, 50) 4px solid;
+
+}
+
+.landingHeader {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.h2Landing {
+  font-family: 'Cedarville Cursive', cursive;
+  color: white;
+  font-size: 45px;
+}
+
+.h6Landing {
+  color: white;
+  align-self: center;
+  font-size: 25px;
+  margin-left: 55px;
+  font-family:'Open Sans', sans-serif;
+  font-weight: 200;
+}
+
+.linkContainer {
+  display: flex;
+  align-content: center;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
 }
