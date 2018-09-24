@@ -1,0 +1,9 @@
+All Items in Your {{shoppingList.name}} List
+
+<ul>
+    {{#each shoppingList.items}}
+    <li>{{this.name}} - {{this.quantity}} <form action='/users/{{../user._id}}/lists/{{../shoppingList._id}}/items/{{_id}}?_method=DELETE' method='POST'>
+    <input type="submit" value='Delete Item'>
+</form></li>
+    {{/each}}
+</ul>
