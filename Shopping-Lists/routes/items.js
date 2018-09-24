@@ -66,6 +66,20 @@ router.get('/:id/edit', (req, res) => {
     })
 })
 
+// UPDATE ROUTE FOR LIST ITEM
+router.put('/:id', (req, res) => {
+  User.findById(req.params.userId)
+    .then((user) => {
+      var shoppingList = user.shoppingLists.id(req.params.listId)
+      var newItem = shoppingList.items.id(req.params.id).set(req.body)
+      console.log("IS IT DOING?", req.body)
+      return user.save()
+    })
+    .then((user) => {
+      res.redirect(`/users/${req.params.userId}/lists/${req.params.listId}/items/`)
+    })
+})
+
 // DELETE LIST
 router.delete('/:id', (req, res) => {
   User.findById(req.params.userId)
