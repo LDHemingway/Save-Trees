@@ -1,4 +1,5 @@
-List: {{shoppingList.name}}
+<h1>List: {{shoppingList.name}}</h1>
+<a href="/users/{{user._id}}/lists/{{shoppingList._id}}/edit">Change List Name</a>
 <ul>
     {{#each shoppingList.items}}
     <li>{{this.name}} - {{this.quantity}}</li>

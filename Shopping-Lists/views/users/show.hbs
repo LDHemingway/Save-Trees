@@ -1,4 +1,5 @@
 <h1>Haaaay {{user.firstName}}</h1>
+<a href="/users/{{user._id}}/edit">Edit User</a>
 
 <h2>Your Lists <a href="/users/{{user.id}}/lists/new">+</a></h2>
 {{#each user.shoppingLists}}
@@ -11,8 +12,6 @@
 </ul>
 <a href="/users/{{../user._id}}/lists/{{_id}}">Select This List</a> |
 {{/each}}
-
-<a href="/users/{{user._id}}/edit">Edit User</a>
 
 <form action='/users/{{user._id}}?_method=DELETE' method='POST'>
     <input type="submit" value='Delete User'>

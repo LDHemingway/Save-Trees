@@ -25,7 +25,8 @@ router.get('/:id', function (req, res, next) {
   User.findById(req.params.userId)
     .then((user) => {
       const shoppingList = user.shoppingLists.id(req.params.id)
-      res.render('shoppingLists/show', { user, 
+      res.render('shoppingLists/show', {
+        user,
         shoppingList
       });
     })
@@ -36,13 +37,38 @@ router.get('/:id', function (req, res, next) {
 router.post('/', (req, res) => {
   const newList = new ShoppingList(req.body)
   User.findById(req.params.userId)
-  .then((user) => {
-    user.shoppingLists.push(newList)
-    return user.save()
-  })
-  .then(() => {
-    res.redirect(`/users/${req.params.userId}`)
-  })
+    .then((user) => {
+      user.shoppingLists.push(newList)
+      return user.save()
+    })
+    .then(() => {
+      res.redirect(`/users/${req.params.userId}`)
+    })
+})
+
+// EDIT, RENDER EDIT FORM FOR LIST NAME
+router.get('/:id/edit', (req, res) => {
+  User.findById(req.params.userId)
+    .then((user) => {
+      res.render('shoppingLists/edit', {
+        user,
+        shoppingList: user.shoppingLists.id(req.params.id)
+      })
+    })
+})
+
+// UPDATE LIST NAME
+router.put('/:id', (req, res) => {
+  User.findById(req.params.userId)
+    .then((user) => {
+      user.shoppingLists.id(req.params.id).name = req.body.name
+      console.log(user.shoppingLists.id(req.params.id).name)
+      return user.save()
+    })
+    .then((user) => {
+      res.redirect(`/users/${req.params.userId}`)
+    })
+  console.log("AFTER THE PROMISE?")
 })
 
 //CREATE LIST WITH MULTIPLE ITEMS
@@ -83,14 +109,14 @@ router.post('/', (req, res) => {
 // DELETE LIST
 router.delete('/:id', (req, res) => {
   User.findById(req.params.userId)
-  .then ((user) => {
-    console.log(user)
-    user.shoppingLists.id(req.params.id).remove()
-    return user.save()
-})
-  .then (() => {
-    res.redirect(`/users/${req.params.userId}`)
-  })
+    .then((user) => {
+      console.log(user)
+      user.shoppingLists.id(req.params.id).remove()
+      return user.save()
+    })
+    .then(() => {
+      res.redirect(`/users/${req.params.userId}`)
+    })
 })
 
 

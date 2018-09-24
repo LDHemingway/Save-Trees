@@ -1,1 +1,6 @@
 <h1>Add New Item to {{shoppingList.name}} List</h1>
+
+<form action='/users/{{userId}}/lists/{{shoppingList._id}}/items' method='POST'>
+    <div>Item: <input type='text' name='items'></div>  <div>Quantity: <input type='text' name='quantity'></div>
+    <div><input type='submit' value='Create List Item'></div>
+</form>
