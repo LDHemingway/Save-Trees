@@ -52,6 +52,20 @@ router.post('/', (req, res) => {
     })
 })
 
+// RENDER EDIT FORM FOR EACH ITEM
+router.get('/:id/edit', (req, res) => {
+  User.findById(req.params.userId)
+    .then((user) => {
+      var shoppingList = user.shoppingLists.id(req.params.listId)
+      var items = shoppingList.items.id(req.params.id)
+      res.render('items/edit', {
+        user,
+        shoppingList,
+        items
+      })
+    })
+})
+
 // DELETE LIST
 router.delete('/:id', (req, res) => {
   User.findById(req.params.userId)

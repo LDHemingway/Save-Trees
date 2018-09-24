@@ -1,0 +1,6 @@
+<h1>Edit Item</h1>
+
+<form action='/users/{{user._id}}/lists/{{shoppingList._id}}/lists/{{list._id}}?_method=PUT' method='POST'>
+    <div>Item: <input type='text' name='name'></div>  <div>Quantity: <input type='text' name='quantity'></div>
+    <div><input type='submit' value='Submit'></div>
+</form>
