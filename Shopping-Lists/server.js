@@ -27,7 +27,7 @@ app.use(methodOverride('_method'))
 app.use('/', landingRouter);
 app.use('/users', usersRouter);
 app.use('/users/:userId/lists', shoppingListsRouter)
-app.use('/users/:uderID/lists/:id', itemsRouter)
+app.use('/users/:userId/lists/:id', itemsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
