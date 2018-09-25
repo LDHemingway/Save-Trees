@@ -1,13 +1,28 @@
-All Items in Your {{shoppingList.name}} List
 
+<div class='homeList'>
+    <h2 class='yourLists'> All Items in Your {{shoppingList.name}} List</h2>
+</div>
+
+<div class='homeContainer'>
+    <a class='home' href="/">Home  |</a> 
+    <a class='goBack' href='/users/{{user._id}}'>|  Go Back to Lists</a>
+</div>
+
+<div class='itemsList'>
 <ul>
     {{#each shoppingList.items}}
     <li>{{this.name}} - {{this.quantity}} <br><br>
     <a href="/users/{{../user._id}}/lists/{{../shoppingList._id}}/items/{{_id}}/edit">Edit Item</a> <br>
     <form action='/users/{{../user._id}}/lists/{{../shoppingList._id}}/items/{{_id}}?_method=DELETE' method='POST'>
     <input type="submit" value='Delete Item'>
-</form></li><hr>
+</form></li><br><br>
     {{/each}}
 </ul>
+</div>
 
-<footer><a href='/'>Home</a></footer>
+<div class='footerContainer'>
+    <footer class="footer">
+        <p class="footerNote">Made with &hearts; by Lauren Hemingway</p>
+    </footer>
+</div>
+

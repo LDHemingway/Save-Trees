@@ -1,6 +1,10 @@
-<h1>Edit User</h1>
+
+<div class="homeLists">
+    <h1 class="yourLists">Edit User</h1>
+</div>
+
 <form action='/users/{{user._id}}?_method=PUT' method='POST'>
-    <div>First Name: <input type='text' name='firstName'></div>
-    <div>Last Name: <input type='text' name='lastName'></div>
+    <div class='formText'>First Name: <input type='text' name='firstName'></div>
+    <div class='formText'>Last Name: <input type='text' name='lastName'></div>
     <div><input type='submit' value='Update User'></div>
 </form>

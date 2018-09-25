@@ -1,8 +1,14 @@
-<h1>Create New List</h1>
+<div class="homeList">
+    <h1 class='yourLists'>Create New List</h1>
+</div>
+<div class='homeContainer'>
+    <a class='home' href="/">Home  |</a> 
+    <a class='goBack' href='/users/{{user._id}}'>|  Go Back to Lists</a>
+</div>
 
-<form action='/users/{{user._id}}/lists' method='POST'>
-<div>Name: <input type='text' name='name'></div>
-<div><input type='submit' value='Create New List'></div>
+<form class='formTable' action='/users/{{user._id}}/lists' method='POST'>
+    <div class='formText'>Name: <input type='text' name='name'></div>
+    <div><input type='submit' value='Create New List'></div>
 </form>
 
 

@@ -1,6 +1,19 @@
-<h1>Change List Name</h1>
+<div class="homeList">
+    <h1 class="yourLists">Change List Name</h1>
+</div>
 
-<form action='/users/{{user._id}}/lists/{{shoppingList._id}}?_method=PUT' method='POST'>
-    <div>Name: <input type='text' name='name'></div>
+<div class='homeContainer'>
+    <a class='home' href="/">Home  |</a> 
+    <a class='goBack' href='/users/{{user._id}}'>|  Go Back to Lists</a>
+</div>
+
+<form class='formTable' action='/users/{{user._id}}/lists/{{shoppingList._id}}?_method=PUT' method='POST'>
+    <div class='formText'>Name: <input type='text' name='name'></div>
     <div><input type='submit' value='Submit'></div>
 </form>
+
+<div class='footerContainer'>
+    <footer class="footer">
+        <p class="footerNote">Made with &hearts; by Lauren Hemingway</p>
+    </footer>
+</div>
