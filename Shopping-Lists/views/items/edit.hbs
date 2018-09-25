@@ -1,6 +1,20 @@
-<h1>Edit Item</h1>
+<div class='homeList'>
+    <h1 class='yourLists'>Edit Item</h1>
+</div>
 
-<form action='/users/{{user._id}}/lists/{{shoppingList._id}}/items/{{items._id}}?_method=PUT' method='POST'>
-    <div>Item: <input type='text' name='name'></div>  <div>Quantity: <input type='text' name='quantity'></div>
+<div class='homeContainer'>
+    <a class='home' href="/">Home  |</a> 
+    <a class='goBack' href='/users/{{user._id}}'>|  Go Back to Lists</a>
+</div>
+
+
+<form class='formTable'action='/users/{{user._id}}/lists/{{shoppingList._id}}/items/{{items._id}}?_method=PUT' method='POST'>
+    <div class='formText'>Item: <input type='text' name='name'></div>  <div class='formText'>Quantity: <input type='text' name='quantity'></div>
     <div><input type='submit' value='Submit'></div>
 </form>
+
+<div class='footerContainer'>
+    <footer class="footer">
+        <p class="footerNote">Made with &hearts; by Lauren Hemingway</p>
+    </footer>
+</div>
