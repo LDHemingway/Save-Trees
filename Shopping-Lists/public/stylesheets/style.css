@@ -202,8 +202,8 @@ a {
   display: flex;
   justify-content: center;
   background: white;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
   border: rgb(57, 63, 50) solid 3px;
   border-radius: 25px;
 }
@@ -288,4 +288,10 @@ a {
   justify-content: center;
   margin-top: 10%;
   display: block;
+}
+
+.itemsNewList {
+  margin-left: 25%;
+  margin-right: 25%;
+  justify-content: center;
 }
