@@ -136,4 +136,98 @@ a {
 
 .footerNote {
   color: white;
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+}
+
+.titleContainer {
+  background: white;
+  border-radius: 25px;
+  border: rgb(57, 63, 50) solid 3px;
+  display: flex;
+  justify-content: center;
+  margin-left: 25%;
+  margin-right: 25%
+}
+
+.pageTitle {
+  font-size: 45px;
+  color: rgb(57, 63, 50);
+  font-weight: 200;
+  letter-spacing: 0.2em;
+}
+
+.homeContainer {
+  display: flex;
+  justify-content: center;
+}
+.home {
+  margin-top: 20px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.usersContainer {
+  display: flex;
+  justify-content: center;
+  background: white;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 40px;
+  border: rgb(57, 63, 50) solid 2px;
+  border-radius: 25px;
+}
+
+.users {
+  color: rgb(57, 63, 50);
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.name {
+  color: white;
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 30px;
+}
+
+.editUser {
+  text-decoration: none;
+  color: white;
+}
+
+.homeList {
+  display: flex;
+  justify-content: center;
+  background: white;
+  margin-left: 30%;
+  margin-right: 30%;
+  border: rgb(57, 63, 50) solid 3px;
+  border-radius: 25px;
+}
+
+.yourLists {
+  text-decoration: none;
+  color: rgb(57, 63, 50);
+  letter-spacing: 0.2em;
+  font-weight: 200;
+}
+
+.addList {
+  text-decoration: none;
+  color: rgb(57, 63, 50);
+}
+
+.userName {
+  text-decoration: none;
+  color: rgb(57, 63, 50);
+}
+
+.listGroups {
+  display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
+  align-content: space-between;
 }

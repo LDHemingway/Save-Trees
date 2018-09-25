@@ -1,17 +1,29 @@
-<h1>Haaaay {{user.firstName}}</h1>
-<a href="/users/{{user._id}}/edit">Edit User</a>
+<div class="name">
+    <h1>Hi, {{user.firstName}}!</h1>
+</div>
 
-<h2>Your Lists <a href="/users/{{user.id}}/lists/new">+</a></h2>
-{{#each user.shoppingLists}}
-<h3>{{this.name}}</h3>
+<a class='editUser' href="/users/{{user._id}}/edit">(Edit User)</a>
 
-<ul>
-    {{#each this.items}}
-        <li>{{this.name}} - quantity: {{this.quantity}}</li>
-    {{/each}}
-</ul>
-<a href="/users/{{../user._id}}/lists/{{_id}}">Select This List</a> |
-{{/each}}
+
+<div class="homeList">
+    <h2 class='yourLists'>Your Lists <a class='addList' href="/users/{{user.id}}/lists/new">+</a></h2>
+</div>
+
+<span class="listGroups">
+    {{#each user.shoppingLists}}
+    <div class="eachList">
+        <h3>{{this.name}}</h3>
+
+            <ul>
+                {{#each this.items}}
+                <li>{{this.name}} - quantity: {{this.quantity}}</li>
+                {{/each}}
+            </ul>
+            <a href="/users/{{../user._id}}/lists/{{_id}}">Select This List</a>
+    </div>
+     {{/each}}
+</span>
+
 
 <form action='/users/{{user._id}}?_method=DELETE' method='POST'>
     <input type="submit" value='Delete User'>

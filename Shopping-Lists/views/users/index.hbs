@@ -1,7 +1,21 @@
-<h1>List of Users</h1>
+<div class="titleContainer">
+    <h1 class="pageTitle">List of Users</h1>
+</div>
 
-{{#each users}}
-<h6><a href="/users/{{this._id}}" >{{this.firstName}} {{this.lastName}}</a></h6>
-{{/each}}
+<div class='homeContainer'>
+    <a class='home' href="/">Home</a>
+</div>
 
-<a href="/">Home</a>
+<div class="usersContainer">
+    <span class="users">
+        {{#each users}}
+        <h6><a class='userName' href="/users/{{this._id}}" >{{this.firstName}} {{this.lastName}}</a></h6>
+        {{/each}}
+    </span>
+</div>
+
+<div class='footerContainer'>
+    <footer class="footer">
+        <p class="footerNote">Made with &hearts; by Lauren Hemingway</p>
+    </footer>
+</div>
