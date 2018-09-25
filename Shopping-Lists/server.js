@@ -13,6 +13,7 @@ const mongoose = require('mongoose')
 var app = express();
 
 mongoose.connect('mongodb://localhost/shopping-lists', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI); 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
